@@ -30,8 +30,6 @@ public class Main {
         // another bean definition
         Game game = applicationContext.getBean(Game.class);
 
-        game.rest();
-
         applicationContext.close();
     }
 }

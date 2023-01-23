@@ -5,7 +5,7 @@
 
     <bean id="numberGenerator" class="org.example.domain.NumberGeneratorImpl"/>
 
-    <bean id="game" class="org.example.domain.GameImpl">
+    <bean id="game" class="org.example.domain.GameImpl" >
         <constructor-arg ref="numberGenerator"/>
     </bean>
 
@@ -14,4 +14,5 @@
 <!--        <property name="numberGenerator" ref="numberGenerator"/>-->
 <!--    </bean>-->
 
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 </beans>
