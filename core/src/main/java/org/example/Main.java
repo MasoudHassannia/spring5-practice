@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.domain.Game;
 import org.example.domain.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,11 @@ public class Main {
         int number = numberGenerator.next();
 
         log.info("Number : {}",number);
+
+        // another bean definition
+        Game game = applicationContext.getBean(Game.class);
+
+        game.rest();
 
         applicationContext.close();
     }

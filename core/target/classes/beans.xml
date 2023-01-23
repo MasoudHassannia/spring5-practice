@@ -5,4 +5,8 @@
 
     <bean id="numberGenerator" class="org.example.domain.NumberGeneratorImpl"/>
 
+    <bean id="game" class="org.example.domain.GameImpl">
+        <constructor-arg ref="numberGenerator"/>
+    </bean>
+
 </beans>
