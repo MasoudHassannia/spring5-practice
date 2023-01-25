@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.config.JavaAnnotationConfig;
 import org.example.domain.Game;
+import org.example.domain.MessageGenerator;
 import org.example.domain.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,11 @@ public class Main {
 
         // another bean definition base on type(class)
         Game game = applicationContext.getBean(Game.class);
+
+        MessageGenerator messageGenerator = applicationContext.getBean(MessageGenerator.class);
+
+        log.info("Main message = {} && result message = {} ",
+                 messageGenerator.getMainMessage(),messageGenerator.getResultMessage());
 
         applicationContext.close();
     }
