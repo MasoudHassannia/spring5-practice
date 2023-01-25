@@ -21,13 +21,13 @@ public class Main {
 
         ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(BEAN_CONFIG_FILE_LOCATION);
 
-        NumberGenerator numberGenerator = applicationContext.getBean("numberGenerator",NumberGenerator.class);
+        NumberGenerator numberGenerator = applicationContext.getBean(NumberGenerator.class);
 
         int number = numberGenerator.next();
 
         log.info("Number : {}",number);
 
-        // another bean definition
+        // another bean definition base on type(class)
         Game game = applicationContext.getBean(Game.class);
 
         applicationContext.close();

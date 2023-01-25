@@ -7,10 +7,6 @@
 
     <context:component-scan base-package="org.example"/>
 
-    <bean id="numberGenerator" class="org.example.domain.NumberGeneratorImpl"/>
-
-    <bean id="game" class="org.example.domain.GameImpl" >
-    </bean>
 
 <!--            Setter injection            -->
 <!--    <bean id="game" class="org.example.domain.GameImpl">-->
