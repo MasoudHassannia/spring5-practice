@@ -13,7 +13,7 @@ public class NumberGeneratorImpl implements NumberGenerator{
 
     @Override
     public int next() {
-        return _RANDOM.nextInt(maxNumber);
+        return _RANDOM.nextInt(maxNumber)+1;
     }
 
     @Override

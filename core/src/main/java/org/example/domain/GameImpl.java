@@ -36,7 +36,7 @@ public class GameImpl implements Game{
         remainingGuess = guessCount;
         biggest = numberGenerator.getMaxNumber();
         number = numberGenerator.next();
-        log.debug("the number is {}",number);
+
     }
 
     @PreDestroy
@@ -74,6 +74,11 @@ public class GameImpl implements Game{
         return remainingGuess;
     }
 
+    @Override
+    public int getGuessCount() {
+        return guessCount;
+    }
+
 
     @Override
     public void check() {
@@ -86,7 +91,7 @@ public class GameImpl implements Game{
         if(guess < number)
             smallest = guess+1;
 
-        guessCount--;
+        remainingGuess--;
     }
 
     @Override

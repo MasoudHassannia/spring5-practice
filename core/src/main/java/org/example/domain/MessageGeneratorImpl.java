@@ -41,8 +41,8 @@ public class MessageGeneratorImpl implements MessageGenerator{
             return "You lost the game number was " + game.getNumber();
         else if(!game.isValidNumberRange())
             return "Invalid range number";
-        else if(game.getRemainingGuesses() == guessCount)
-            return "Enter ur first guess number";
+        else if(game.getRemainingGuesses() == game.getGuessCount())
+            return "Enter Number";
         else {
             String temp = "LOWER";
             if(game.getGuess() < game.getNumber())
