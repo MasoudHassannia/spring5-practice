@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="numberGenerator" class="org.example.domain.NumberGeneratorImpl"/>
 
     <bean id="game" class="org.example.domain.GameImpl" >
-        <constructor-arg ref="numberGenerator"/>
     </bean>
 
 <!--            Setter injection            -->
@@ -14,5 +15,4 @@
 <!--        <property name="numberGenerator" ref="numberGenerator"/>-->
 <!--    </bean>-->
 
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 </beans>
