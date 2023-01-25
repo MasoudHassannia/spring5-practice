@@ -1,11 +1,13 @@
 package org.example;
 
+import org.example.config.JavaAnnotationConfig;
 import org.example.domain.Game;
 import org.example.domain.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
@@ -13,13 +15,13 @@ public class Main {
 
     private final static Logger log = LoggerFactory.getLogger(Main.class);
 
-    private final static String  BEAN_CONFIG_FILE_LOCATION = "beans.xml";
-
+    // private final static String  BEAN_CONFIG_FILE_LOCATION = "beans.xml";
 
     public static void main(String[] args) {
         log.info("guess Number game");
 
-        ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(BEAN_CONFIG_FILE_LOCATION);
+        ConfigurableApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(JavaAnnotationConfig.class);
 
         NumberGenerator numberGenerator = applicationContext.getBean(NumberGenerator.class);
 

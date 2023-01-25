@@ -1,3 +1,4 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -8,9 +9,9 @@
     <context:component-scan base-package="org.example"/>
 
 
-<!--            Setter injection            -->
-<!--    <bean id="game" class="org.example.domain.GameImpl">-->
-<!--        <property name="numberGenerator" ref="numberGenerator"/>-->
-<!--    </bean>-->
+&lt;!&ndash;            Setter injection            &ndash;&gt;
+&lt;!&ndash;    <bean id="game" class="org.example.domain.GameImpl">&ndash;&gt;
+&lt;!&ndash;        <property name="numberGenerator" ref="numberGenerator"/>&ndash;&gt;
+&lt;!&ndash;    </bean>&ndash;&gt;
 
-</beans>
+</beans>-->
