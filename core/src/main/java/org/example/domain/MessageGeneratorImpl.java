@@ -1,14 +1,12 @@
 package org.example.domain;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 
+@Slf4j
 public class MessageGeneratorImpl implements MessageGenerator{
-
-    private static final Logger log = LoggerFactory.getLogger(MessageGeneratorImpl.class);
 
     @Autowired
     private Game game;
@@ -40,7 +38,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
         else if(!game.isValidNumberRange())
             return "Invalid range number";
         else if(game.getRemainingGuesses() == game.getGuessCount())
-            return "Enter Number";
+            return "Enter Number:";
         else {
             String temp = "LOWER";
             if(game.getGuess() < game.getNumber())

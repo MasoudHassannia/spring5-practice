@@ -1,7 +1,9 @@
 package org.example.domain;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -12,29 +14,29 @@ import javax.annotation.PreDestroy;
 
 @Component
 @PropertySource("classpath:game.properties")
+@Getter
+@Slf4j
 public class GameImpl implements Game{
 
-    private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
-
+    // remove getter for this field
+    @Getter(AccessLevel.NONE)
     private NumberGenerator numberGenerator;
+    @Value("${game.guessCount:5}")
+    private int guessCount;
+    private int number;
+    @Setter
+    private int guess;
+
+    private int smallest;
+    private int biggest;
+    private int remainingGuesses;
+    private boolean validNumberRange = true;
 
     @Autowired
     public GameImpl(NumberGenerator numberGenerator) {
         this.numberGenerator = numberGenerator;
     }
 
-    @Value("${game.guessCount:5}")
-    private int guessCount;
-    private int number;
-    private int guess;
-    private int smallest;
-    private int biggest;
-    private int remainingGuess;
-    private boolean validNumberRange = true;
-
-//   public GameImpl(NumberGenerator numberGenerator) {
-//       this.numberGenerator = numberGenerator;
-//   }
 
     // init
     @PostConstruct
@@ -42,52 +44,15 @@ public class GameImpl implements Game{
     public void rest() {
         smallest = 0;
         guess = 0;
-        remainingGuess = guessCount;
+        remainingGuesses = guessCount;
         biggest = numberGenerator.getMaxNumber();
         number = numberGenerator.next();
-
     }
 
     @PreDestroy
     public void preDestroy() {
         log.info(" destroy method call");
     }
-
-    @Override
-    public int getNumber() {
-        return number;
-    }
-
-    @Override
-    public int getGuess() {
-        return guess;
-    }
-
-    @Override
-    public void setGuess(int guess) {
-        this.guess = guess;
-    }
-
-    @Override
-    public int getSmallest() {
-        return smallest;
-    }
-
-    @Override
-    public int getBiggest() {
-        return biggest;
-    }
-
-    @Override
-    public int getRemainingGuesses() {
-        return remainingGuess;
-    }
-
-    @Override
-    public int getGuessCount() {
-        return guessCount;
-    }
-
 
     @Override
     public void check() {
@@ -100,12 +65,7 @@ public class GameImpl implements Game{
         if(guess < number)
             smallest = guess+1;
 
-        remainingGuess--;
-    }
-
-    @Override
-    public boolean isValidNumberRange() {
-        return validNumberRange;
+        remainingGuesses--;
     }
 
     @Override
@@ -115,15 +75,10 @@ public class GameImpl implements Game{
 
     @Override
     public boolean isGameLost() {
-        return !isGameWon() && remainingGuess <= 0;
+        return !isGameWon() && remainingGuesses <= 0;
     }
 
     private void checkValidNumberRange() {
         validNumberRange = (guess >= smallest) && (guess <= biggest);
-    }
-
-
-    public void setNumberGenerator(NumberGenerator numberGenerator) {
-        this.numberGenerator = numberGenerator;
     }
 }
