@@ -13,8 +13,6 @@ public class MessageGeneratorImpl implements MessageGenerator{
     @Autowired
     private Game game;
 
-    private int guessCount = 10;
-
     @PostConstruct
     public void init() {
         log.info("game remain guess is = {}",game.getRemainingGuesses());

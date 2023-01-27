@@ -16,10 +16,14 @@ public class GameImpl implements Game{
 
     private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
 
-    @Autowired
     private NumberGenerator numberGenerator;
 
-    @Value("${game.guessCount}")
+    @Autowired
+    public GameImpl(NumberGenerator numberGenerator) {
+        this.numberGenerator = numberGenerator;
+    }
+
+    @Value("${game.guessCount:5}")
     private int guessCount;
     private int number;
     private int guess;
