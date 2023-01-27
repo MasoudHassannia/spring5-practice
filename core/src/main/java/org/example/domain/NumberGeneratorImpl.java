@@ -1,15 +1,19 @@
 package org.example.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
 @Component
+@PropertySource("classpath:game.properties")
 public class NumberGeneratorImpl implements NumberGenerator{
 
     private final Random _RANDOM = new Random();
 
-    private int maxNumber = 100;
+    @Value("${game.maxNumber}")
+    private int maxNumber;
 
     @Override
     public int next() {
