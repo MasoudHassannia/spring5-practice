@@ -1,3 +1,8 @@
 org\example\config\WebConfig.class
+org\example\service\GameService.class
+org\example\util\AttributeNameConstants.class
+org\example\impl\GameServiceImpl.class
+org\example\util\GameURLMapping.class
 org\example\util\ViewsNameConstants.class
 org\example\WebMain.class
+org\example\controller\GameController.class
