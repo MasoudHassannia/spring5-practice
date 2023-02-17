@@ -1,0 +1,7 @@
+org\example\domain\MessageGeneratorImpl.class
+org\example\domain\NumberGeneratorImpl.class
+org\example\domain\GameImpl.class
+org\example\domain\MessageGenerator.class
+org\example\domain\Game.class
+org\example\domain\NumberGenerator.class
+org\example\config\JavaAnnotationConfig.class
