@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class WebMain {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class,args);
+        SpringApplication.run(WebMain.class,args);
     }
 }

@@ -1,1 +1,3 @@
+org\example\config\WebConfig.class
+org\example\util\ViewsNameConstants.class
 org\example\WebMain.class
