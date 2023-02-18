@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.tyhmeleaf.org">
-<head>
+<head th:replace="~{fragments/head :: headFragment}">
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Home1</title>
 </head>
 <body>
     <div align="center">
@@ -11,6 +11,9 @@
        <h3> <a th:href="@{__${T(org.example.util.GameURLMapping).PLAY}__}"
                th:text="Play">Click to Play</a>
        </h3>
+
+        <div th:replace="~{fragments/footer::footerFrag}"> footer in display here</div>
+
     </div>
 </body>
 </html>

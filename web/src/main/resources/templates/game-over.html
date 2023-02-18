@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.tyhmeleaf.org">
-<head>
+<head th:replace="~{fragments/head :: headFragment}">
     <meta charset="UTF-8">
     <title>Game Over</title>
 </head>
@@ -13,9 +13,8 @@
         <h3> <a th:href="restart" >Play Again</a> </h3>
         <h3> <a th:href="@{/}" >Home</a> </h3>
 
-        <footer>
-            <p> This is Footer text</p>
-        </footer>
+        <footer th:replace="~{fragments/footer::footerFrag}"></footer>
+
     </div>
 </body>
 </html>

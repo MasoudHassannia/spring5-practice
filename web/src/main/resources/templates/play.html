@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.tyhmeleaf.org">
-<head>
+<head th:replace="~{fragments/head :: headFragment}">
     <meta charset="UTF-8">
     <title>Play Game</title>
 </head>
@@ -16,9 +16,8 @@
                 <input type="submit" value="Submit"/>
             </form>
 
-            <footer>
-                <p> This is Footer text</p>
-            </footer>
+        <footer th:replace="~{fragments/footer::footerFrag}"></footer>
+
     </div>
 </body>
 </html>
