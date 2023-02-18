@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.PostConstruct;
+
 
 @Controller
 @Slf4j
@@ -41,6 +41,12 @@ public class GameController {
     public String gameProcess(@RequestParam int guess){
         log.info("**** Guess == {}",guess);
         gameService.checkGuess(guess);
+        return GameURLMapping.REDIRECT_PLAY;
+    }
+
+    @GetMapping(GameURLMapping.RESTART)
+    public String restart() {
+        gameService.reset();
         return GameURLMapping.REDIRECT_PLAY;
     }
 }
