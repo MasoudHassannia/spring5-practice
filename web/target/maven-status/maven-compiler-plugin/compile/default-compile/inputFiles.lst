@@ -1,6 +1,7 @@
 D:\JavaProjects\2023\game-learning\web\src\main\java\org\example\controller\GameController.java
 D:\JavaProjects\2023\game-learning\web\src\main\java\org\example\util\ViewsNameConstants.java
 D:\JavaProjects\2023\game-learning\web\src\main\java\org\example\config\WebConfig.java
+D:\JavaProjects\2023\game-learning\web\src\main\java\org\example\interceptor\RequestInterceptor.java
 D:\JavaProjects\2023\game-learning\web\src\main\java\org\example\service\GameService.java
 D:\JavaProjects\2023\game-learning\web\src\main\java\org\example\WebMain.java
 D:\JavaProjects\2023\game-learning\web\src\main\java\org\example\impl\GameServiceImpl.java
