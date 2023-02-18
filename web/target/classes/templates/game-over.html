@@ -13,9 +13,8 @@
         <h3> <a th:href="restart" >Play Again</a> </h3>
         <h3> <a th:href="@{/}" >Home</a> </h3>
 
-        <footer>
-            <p> This is Footer text</p>
-        </footer>
+        <footer th:replace="~{fragments/footer::footerFrag}"></footer>
+
     </div>
 </body>
 </html>

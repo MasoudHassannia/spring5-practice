@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.tyhmeleaf.org">
-<head th:replace="~{fragments/head :: headFragment}">
+<head id="headId">
     <meta charset="UTF-8">
     <title>Play Game</title>
 </head>
 <body>
     <div align="center">
             <h1>Guess Number Game</h1>
-            <h3 th:text="${__${T(org.example.util.AttributeNameConstants).MAIN_MESSAGE}__}">Main Message</h3>
-            <h3 th:text="${__${T(org.example.util.AttributeNameConstants).RESULT_MESSAGE}__}">Result Message</h3>
+            <h3 id="main-message">Main Message</h3>
+            <h3 id="result-message">Result Message</h3>
 
-            <form th:action="@{__${T(org.example.util.GameURLMapping).PLAY}__}" method="post">
+            <form id="gameForm"  method="post">
                 <label for="guess" >Enter Your Guess</label>
                 <input id="guess" type="number" name="guess">
                 <input type="submit" value="Submit"/>
             </form>
 
-            <footer>
-                <p> This is Footer text</p>
-            </footer>
+        <footer id="footerId"></footer>
+
     </div>
 </body>
 </html>
